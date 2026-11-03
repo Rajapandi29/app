@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Azure Shopping Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        AZURE MART
+    </div>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search products..."
+    >
+
+    <button id="cartButton" class="cart-button">
+        Cart (<span id="cartCount">0</span>)
+    </button>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div>
+            <h1>Discover Your Favourite Products</h1>
+
+            <p>
+                Quality products. Great prices.
+                Simple shopping.
+            </p>
+
+            <button id="shopNow">
+                Shop Now
+            </button>
+        </div>
+
+    </section>
+
+
+    <section class="products-section">
+
+        <div class="section-title">
+
+            <h2>Featured Products</h2>
+
+            <span id="productStatus">
+                Loading products...
+            </span>
+
+        </div>
+
+        <div id="productGrid" class="product-grid"></div>
+
+    </section>
+
+
+    <!-- Product detail modal -->
+
+    <div id="productModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close" id="closeProduct">
+                ×
+            </button>
+
+            <div class="detail-layout">
+
+                <div>
+
+                    <img
+                        id="mainImage"
+                        class="main-image"
+                        alt="Product"
+                    >
+
+                    <div
+                        id="imageGallery"
+                        class="image-gallery">
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <h2 id="detailName"></h2>
+
+                    <h2 id="detailPrice"></h2>
+
+                    <p id="detailDescription"></p>
+
+                    <p id="detailStock"></p>
+
+                    <label for="detailQuantity">
+                        Quantity
+                    </label>
+
+                    <input
+                        id="detailQuantity"
+                        type="number"
+                        min="1"
+                        value="1"
+                    >
+
+                    <button id="addToCart">
+                        Add to Cart
+                    </button>
+
+                    <button id="buyNow">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart modal -->
+
+    <div id="cartModal" class="modal">
+
+        <div class="modal-content cart-content">
+
+            <button class="close" id="closeCart">
+                ×
+            </button>
+
+            <h2>Shopping Cart</h2>
+
+            <div id="cartItems"></div>
+
+            <h3 id="cartTotal">
+                Total: ₹0
+            </h3>
+
+            <button id="checkout">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Checkout modal -->
+
+    <div id="checkoutModal" class="modal">
+
+        <div class="modal-content checkout-content">
+
+            <button class="close" id="closeCheckout">
+                ×
+            </button>
+
+            <h2>Delivery Details</h2>
+
+            <form id="checkoutForm">
+
+                <input
+                    name="name"
+                    placeholder="Full name"
+                    required
+                    maxlength="100"
+                >
+
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="Email address"
+                    required
+                >
+
+                <input
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone number"
+                    required
+                >
+
+                <textarea
+                    name="address"
+                    placeholder="Delivery address"
+                    required
+                    maxlength="500"
+                ></textarea>
+
+                <button type="submit">
+                    Place Order
+                </button>
+
+            </form>
+
+            <div id="orderMessage"></div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Azure Mart | Powered by Microsoft Azure
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
